@@ -5,9 +5,10 @@ const fs = require("fs");
 const express = require("express");
 const apiSubrouter = express.Router();
 // build path to notes JSON file
-const dbFilePath = path.join(__dirname, "..", "db", "db.json");
+const dbFilePath = "./db/db.json";
 // get route
 apiSubrouter.get("/notes", (req, res) => {
+  console.log("test");
   fs.readFile(dbFilePath, "UTF-8", (error, data) => {
     if (error) {
       console.log(error);
